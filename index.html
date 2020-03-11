@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> bloggs </title>
+</head>
+<body>
+<ul>
+<h1> yaay ! blog again </h1>
+{%  for post in posts %}
+<article>  
+<h2> <a href="{% url 'show' id=post.id %} " >#{{ post.titel|upper}} </a></h2>
+<p>first this ...  {{ post.bodey|truncatewords:3 }} </p>
+
+<p> <a href="/blog/posts/{{post.id}}"> lire la suittte</a></p>
+</article>
+
+{%  if not forloop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+</body>
+</html>
