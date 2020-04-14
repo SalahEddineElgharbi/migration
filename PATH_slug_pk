@@ -2,10 +2,11 @@
 Regex: (?P<pk>\d+)    
 
 url(r'^questions/(?P<pk>\d+)/$', views.question_details, name='question_details'),
-
+/////////////////////////////////////////////////////////////////
 after django 2.   
-path (' .../(<int:pk>)'
-
+at URLS.PY
+path (' .../(<int:pk>)',viwes..... ) ,
+//////////////////////////////////////////////////////////////
 
 
 
@@ -24,10 +25,11 @@ URL
 /questions/abcdef/
 Slug Fields
 Regex: (?P<slug>[-\w]+)
-
+////////////////////////////////////////////////
 after django 2.   
+at URLS.PY
 path (' .../(<slug:slug>)'
-
+///////////////////////////////////////////
 
 
 
@@ -44,8 +46,18 @@ URL
 /posts/hello world/
 /posts/hello%20world/
 /posts/@hello-world*/
+////////////////////////////////////////////////////////////////
+
 Slug with Primary Key
 Regex: (?P<slug>[-\w]+)-(?P<pk>\d+)
+
+
+after django 2.   
+at URLS.PY
+path (' .../(<slug:slug>/<int:pk>)'
+
+
+//////////////////////////////////////////////////////////////
 
 url(r'^blog/(?P<slug>[-\w]+)-(?P<pk>\d+)/$', views.blog_post, name='blog_post'),
 Match
@@ -72,6 +84,7 @@ URL
 /profile/*vitorfs/
 /profile/$vitorfs/
 /profile/vitor fs/
+/////////////////////////////////////////////////////////////////////////////////
 Dates
 Year
 Regex: (?P<year>[0-9]{4})
@@ -83,6 +96,7 @@ URL	Captures
 /articles/9999/	{'year': '9999'}
 Won't match
 URL
+/////////////////////////////////////////////////////////////////////////////////////////
 /articles/999/
 Year / Month
 Regex: (?P<year>[0-9]{4})/(?P<month>[0-9]{2})
@@ -106,6 +120,7 @@ URL	Captures
 /articles/9999/99/99/	{'year': '9999', 'month': '99', 'day': '99'}
 Won't match
 URL
+/////////////////////////////////////////////////////////////////////////////////////////
 /articles/2016/01/9/
 /articles/2016/01/290/
 Flattened Index
